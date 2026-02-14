@@ -1,6 +1,6 @@
 ---
 name: prompt-generator
-description: Generate AI image and video prompts. Use when user asks for prompts for any AI media generation model. Supports 5 modes (T2I, I2I, T2V, I2V, Storyboard), 9 models, multi-model comparison, Higgsfield-optimized output, style library, and consistency mode.
+description: Generate AI image and video prompts. Use when user asks for prompts for any AI media generation model. Supports 5 modes (T2I, I2I, T2V, I2V, Storyboard), 16 models, multi-model comparison, Higgsfield-optimized output, style library, and consistency mode.
 ---
 
 # AI Media Prompt Generator
@@ -9,7 +9,7 @@ description: Generate AI image and video prompts. Use when user asks for prompts
 Activate when the user:
 - Asks to create/generate/write a prompt for AI image or video generation
 - Mentions image, video, or media generation
-- References specific models (Midjourney, VEO3, GPT-Image, Flux, Seedream, Nano Banana, Wan, Kling, Seedance, etc.)
+- References specific models (Midjourney, Veo, GPT-Image, Flux, Flux Kontext, Seedream, Nano Banana, Reve, Z-Image, Higgsfield Soul, Wan, Kling, Seedance, Sora, MiniMax Hailuo, etc.)
 - Wants help crafting AI art, video, or storyboard prompts
 - Asks for multi-model comparison prompts
 - Mentions Higgsfield workflow
@@ -98,10 +98,10 @@ Based on the mode and concept details, recommend compatible models with reasonin
 
 | Mode | Compatible Models |
 |------|-------------------|
-| T2I | Midjourney v7, Flux 2 Max, GPT-Image 1.5, Seedream 4.5, Nano Banana Pro |
-| I2I | GPT-Image 1.5, Seedream 4.5, Flux 2 Max, Nano Banana Pro, Midjourney v7 (--oref/--sref) |
-| T2V | VEO3, Wan 2.2, Kling 3.0, Seedance 2.0 |
-| I2V | VEO3, Wan 2.2, Kling 3.0, Seedance 2.0 |
+| T2I | Midjourney v7, Flux 2 Max, Flux Kontext, GPT-Image 1.5, Seedream 4.5, Nano Banana Pro, Reve Image 1.0, Z-Image, Higgsfield Soul |
+| I2I | GPT-Image 1.5, Seedream 4.5, Flux 2 Max, Flux Kontext, Nano Banana Pro, Midjourney v7 (--oref/--sref), Reve Image 1.0, Z-Image, Higgsfield Soul |
+| T2V | Veo 3.1, WAN 2.6, Kling 3.0, Kling O1, Seedance 2.0, Sora 2, MiniMax Hailuo |
+| I2V | Veo 3.1, WAN 2.6, Kling 3.0, Kling O1, Seedance 2.0, Sora 2, MiniMax Hailuo |
 | Storyboard | Kling 3.0 (6-cut storyboard), Seedance 2.0 (multi-shot) |
 
 Present recommendations like:
@@ -121,13 +121,20 @@ Present recommendations like:
 |-------|----------------------------|
 | Midjourney v7 | ~2 credits |
 | Flux 2 Max | ~1 credit |
+| Flux Kontext | ~1.5 credits |
 | GPT-Image 1.5 | ~1 credit |
 | Seedream 4.5 | ~1 credit |
 | Nano Banana Pro | <1 credit |
-| VEO3 | ~8 credits |
-| Wan 2.2 | ~3 credits |
+| Reve Image 1.0 | ~1 credit |
+| Z-Image | <1 credit |
+| Higgsfield Soul | ~1 credit |
+| Veo 3.1 | ~8 credits |
+| WAN 2.6 | ~3 credits |
 | Kling 3.0 | ~5 credits |
+| Kling O1 | ~5 credits |
 | Seedance 2.0 | ~5 credits |
+| Sora 2 | ~8-10 credits |
+| MiniMax Hailuo | ~3-5 credits |
 
 ### Step 5: Style Suggestion (Optional)
 
@@ -266,10 +273,11 @@ When the user provides a reference image:
 ```
 - I2I: Use `--oref [url]` for object reference, `--sref [url]` for style reference, `--iw [0-3]` for image weight
 
-### VEO3
+### Veo 3.1
 ```
 [Subject] + [Action] + [Setting] + [Style] + [Camera] + [Lighting] + [Audio]. No subtitles, no text overlay.
 ```
+- Supports 4K output, vertical video (9:16), native synchronized audio
 - I2V: Reference image as first/last frame, 720p+ recommended
 
 ### GPT-Image 1.5
@@ -285,6 +293,18 @@ When the user provides a reference image:
 - No negative prompts — describe what you want, not what to avoid
 - I2I: Reference images (2-3 max), positive-only reframing
 
+### Flux Kontext
+```
+[Action: what to change] + [Context: how to change it] + [Preservation: what to keep]
+```
+- Primary strength: context-aware editing of existing images
+- Use action verbs: "change," "add," "remove," "replace," "transform"
+- Always include preservation clause for elements to keep unchanged
+- Use direct subject naming, never pronouns
+- Max 512 tokens per prompt
+- T2I: Use descriptive approach similar to Flux 2 Max
+- I2I: Lead with action verb + preservation clause (e.g., "Change X while keeping Y")
+
 ### Seedream 4.5
 ```
 [Subject], [style], [composition], [lighting/atmosphere], [technical]
@@ -298,10 +318,11 @@ When the user provides a reference image:
 - Natural creative director language — no tag soups
 - I2I: Reference image with weight values, conversational edits
 
-### Wan 2.2
+### WAN 2.6
 ```
 [Subject] + [Scene] + [Movement] + [Aesthetic] + [Style]
 ```
+- Supports up to 15-second clips, phoneme lip-sync, video roleplay
 - I2V: [Motion Description] + [Camera Movement] — source image establishes subject/scene
 
 ### Kling 3.0
@@ -318,6 +339,75 @@ When the user provides a reference image:
 - @Tag references: @Image1, @Video1, @Audio1 (up to 12 files)
 - NO negative prompts (model ignores them — use positive phrasing)
 - Audio must be MP3 format
+
+### Sora 2
+```
+[Scene prose with subject, setting, style]
+
+Cinematography:
+Camera shot: [framing and angle]
+Mood: [overall tone]
+
+Actions:
+- [Beat 1]
+- [Beat 2]
+
+Dialogue:
+- [Speaker]: "[line]"
+
+Background Sound: [ambient audio, SFX]
+```
+- Structured labeled sections, not keyword lists
+- One camera move + one subject action per shot
+- Set style in first sentence to frame the generation
+- Native synchronized audio (dialogue, SFX, ambience)
+- Shorter clips (4s) follow instructions more reliably than longer (8s, 12s)
+
+### Kling O1
+```
+[Cinematic description with scene, action, camera direction]
+```
+- Unified multimodal model — supports T2V, I2V, editing, restyle, extend
+- Element Library for up to 7 reference images
+- Motion transfer from reference videos
+- 2K resolution output
+
+### MiniMax Hailuo
+```
+[Subject] + [Action] + [Scene] + [Style] + [Camera]
+```
+- Speed-optimized: fastest generation times among video models
+- Strong stylization: anime, ink wash, game CG, watercolor
+- Style locking for consistency across clips
+- Micro-expression and emotion rendering
+
+### Reve Image 1.0
+```
+[Detailed natural language description with subject, style, composition, lighting]
+```
+- #1 on Artificial Analysis Image Arena
+- 98% text accuracy — industry-leading typography rendering
+- Use quotation marks for text to render: 'text here'
+- No negative prompts — describe desired outcomes only
+
+### Z-Image
+```
+[Subject] + [Style] + [Scene] + [Lighting/Atmosphere]
+```
+- Ultra-fast generation (1-3 seconds)
+- Best for rapid iteration and drafting
+- Quality trades off for speed — use for exploration, refine with other models
+
+### Higgsfield Soul
+```
+[Preset Selection] + [subject description], [setting], [lighting], [mood], [camera/lens]
+```
+- Choose aesthetic preset FIRST (50+ options including Tokyo Streetstyle, Y2K, Quiet Luxury, Grunge, etc.)
+- Write like a creative director — photography and fashion terminology
+- Specify materials/textures (Soul excels at fabric, skin pores, surface detail)
+- Reference camera/lens language (50mm, 85mm, shallow DOF)
+- Add "no text, no signage" for clean street scenes
+- Disable "Enhance Prompt" for strict adherence
 
 ## Quality Checklist
 

@@ -9,13 +9,20 @@ Generate high-quality, model-specific prompts for AI image and video generation 
 |-------|------|-------|-----------------|--------|
 | Midjourney v7 | Image | T2I, I2I | ~2 | Active |
 | Flux 2 Max | Image | T2I, I2I | ~1 | Active |
+| Flux Kontext | Image | T2I, I2I | ~1.5 | Active |
 | GPT-Image 1.5 | Image | T2I, I2I | ~1 | Active |
 | Seedream 4.5 | Image | T2I, I2I | ~1 | Active |
 | Nano Banana Pro | Image | T2I, I2I | <1 | Active |
-| VEO3 | Video | T2V, I2V | ~8 | Active |
-| Wan 2.2 | Video | T2V, I2V | ~3 | Active |
+| Reve Image 1.0 | Image | T2I, I2I | ~1 | Active |
+| Z-Image | Image | T2I, I2I | <1 | Active |
+| Higgsfield Soul | Image | T2I, I2I | ~1 | Active |
+| Veo 3.1 | Video | T2V, I2V | ~8 | Active |
+| WAN 2.6 | Video | T2V, I2V | ~3 | Active |
 | Kling 3.0 | Video | T2V, I2V, Storyboard | ~5 | Active |
+| Kling O1 | Video | T2V, I2V | ~5 | Active |
 | Seedance 2.0 | Video | T2V, I2V, Storyboard | ~5 | Active |
+| Sora 2 | Video | T2V, I2V | ~8-10 | Active |
+| MiniMax Hailuo | Video | T2V, I2V | ~3-5 | Active |
 
 ## Generation Modes
 
@@ -31,10 +38,10 @@ Generate high-quality, model-specific prompts for AI image and video generation 
 
 | Mode | Compatible Models |
 |------|-------------------|
-| T2I | Midjourney v7, Flux 2 Max, GPT-Image 1.5, Seedream 4.5, Nano Banana Pro |
-| I2I | GPT-Image 1.5, Seedream 4.5, Flux 2 Max, Nano Banana Pro, Midjourney v7 |
-| T2V | VEO3, Wan 2.2, Kling 3.0, Seedance 2.0 |
-| I2V | VEO3, Wan 2.2, Kling 3.0, Seedance 2.0 |
+| T2I | Midjourney v7, Flux 2 Max, Flux Kontext, GPT-Image 1.5, Seedream 4.5, Nano Banana Pro, Reve Image 1.0, Z-Image, Higgsfield Soul |
+| I2I | GPT-Image 1.5, Seedream 4.5, Flux 2 Max, Flux Kontext, Nano Banana Pro, Midjourney v7, Reve Image 1.0, Z-Image, Higgsfield Soul |
+| T2V | Veo 3.1, WAN 2.6, Kling 3.0, Kling O1, Seedance 2.0, Sora 2, MiniMax Hailuo |
+| I2V | Veo 3.1, WAN 2.6, Kling 3.0, Kling O1, Seedance 2.0, Sora 2, MiniMax Hailuo |
 | Storyboard | Kling 3.0, Seedance 2.0 |
 
 ## Default Behavior
@@ -112,14 +119,21 @@ Manual process:
 
 Model-specific syntax, parameters, and examples:
 - `.claude/skills/models/midjourney.md`
-- `.claude/skills/models/veo3.md`
+- `.claude/skills/models/flux.md` (Flux 2 Max)
+- `.claude/skills/models/flux-kontext.md` (Flux Kontext)
 - `.claude/skills/models/gpt-image.md`
-- `.claude/skills/models/flux.md`
 - `.claude/skills/models/seedream.md`
 - `.claude/skills/models/nano-banana.md`
-- `.claude/skills/models/wan.md`
-- `.claude/skills/models/kling.md`
+- `.claude/skills/models/reve.md`
+- `.claude/skills/models/z-image.md`
+- `.claude/skills/models/higgsfield-soul.md`
+- `.claude/skills/models/veo3.md` (Veo 3.1)
+- `.claude/skills/models/wan.md` (WAN 2.6)
+- `.claude/skills/models/kling.md` (Kling 3.0)
+- `.claude/skills/models/kling-o1.md`
 - `.claude/skills/models/seedance.md`
+- `.claude/skills/models/sora.md`
+- `.claude/skills/models/minimax-hailuo.md`
 
 Template: `.claude/skills/models/_template.md`
 
@@ -128,3 +142,5 @@ Template: `.claude/skills/models/_template.md`
 - `.claude/skills/higgsfield-reference.md` — Camera presets, credit costs, Soul ID, Popcorn, Cinema Studio
 - `.claude/skills/styles/` — Reusable style library
 - `.claude/skills/model-researcher/SKILL.md` — Skill for adding new models
+- `.claude/skills/model-updates/SKILL.md` — Monthly Higgsfield model audit skill
+- `.claude/skills/model-updates/skipped.json` — Tracking for declined models
