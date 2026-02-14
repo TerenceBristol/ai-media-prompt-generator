@@ -1,5 +1,17 @@
 # Seedream 4.5 Prompt Guide
 
+## Model Info
+| Field | Value |
+|-------|-------|
+| Name | Seedream 4.5 |
+| Maker | ByteDance |
+| Type | Image |
+| Modes | T2I, I2I |
+| Syntax | Natural language (concise, precise) |
+| Negative Prompts | In-prompt only |
+| Higgsfield Available | Yes |
+| Approx. Cost | ~1 credit per generation |
+
 ## Overview
 
 Seedream 4.5 is ByteDance's advanced text-to-image model with strong prompt understanding and image editing capabilities. It excels at photorealistic renders and precise text generation.
@@ -94,16 +106,46 @@ Generate a motivational poster with the title "DREAM BIG" in bold white letters,
 Ancient dragon perched on a mountain peak, dramatic storm clouds, lightning illuminating scales, epic fantasy illustration, cinematic composition, golden hour rim lighting, highly detailed, 4K
 ```
 
-## Image Editing Tips
+## Image-to-Image (I2I)
 
-When editing existing images:
-- Clearly define editing goals AND fixed elements
+Seedream 4.5 offers powerful image editing capabilities including inpainting, outpainting, and multi-image blending.
+
+### Editing Modes
+
+| Mode | Description |
+|------|-------------|
+| Inpainting | Edit specific regions while preserving the rest |
+| Outpainting | Extend the image beyond its original borders |
+| Style transfer | Change artistic style while maintaining composition |
+| Multi-image blend | Combine elements from up to 6 reference images |
+
+### I2I Prompt Structure
+- **Clearly define editing goals AND fixed elements**
 - Use concise, unambiguous instructions
-- Avoid vague pronouns
+- Avoid vague pronouns — be specific about what changes
 - Specify what should remain unchanged
 
-**Good:** "Change the background to a beach sunset while keeping the person unchanged"
-**Bad:** "Make it look better"
+### Inpainting Example
+```
+Replace the sky with a dramatic sunset of orange and purple tones. Keep the buildings, trees, and ground unchanged. Maintain consistent lighting direction from the west.
+```
+
+### Outpainting Example
+```
+Extend the image to the right, revealing more of the garden path lined with lavender bushes. Match the existing lighting and color palette. Aspect ratio: 16:9.
+```
+
+### Multi-Image Blend
+Seedream can blend elements from up to 6 reference images:
+```
+Combine: face from Image 1, hairstyle from Image 2, outfit from Image 3, background from Image 4. Professional portrait style, studio lighting, shallow depth of field.
+```
+
+### Best Practices for I2I
+- **Good:** "Change the background to a beach sunset while keeping the person unchanged"
+- **Bad:** "Make it look better"
+- First 5-8 words get highest priority — lead with the main edit action
+- Pick 3-5 clear descriptors for the desired change
 
 ## Common Mistakes to Avoid
 
@@ -133,3 +175,11 @@ When editing existing images:
 | Prompt length | 30-100 words ideal | Flexible |
 | Text rendering | Excellent with quotes | Good |
 | Editing | Built-in support | Limited |
+
+## Higgsfield Notes
+
+| Setting | Recommendation |
+|---------|---------------|
+| Aspect Ratio | Any standard ratio |
+| Enhance | OFF |
+| Credits | ~1 per generation |

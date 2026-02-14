@@ -1,5 +1,17 @@
 # GPT-Image (1.5 / Hazelnut) Prompt Guide
 
+## Model Info
+| Field | Value |
+|-------|-------|
+| Name | GPT-Image 1.5 |
+| Maker | OpenAI |
+| Type | Image |
+| Modes | T2I, I2I |
+| Syntax | Natural language |
+| Negative Prompts | In-prompt only (natural language exclusions) |
+| Higgsfield Available | Yes |
+| Approx. Cost | ~1 credit per generation |
+
 ## Overview
 
 GPT-Image 1.5 (December 2025) is OpenAI's latest image generation model, with "Hazelnut" being the codename for the upcoming GPT-Image-2.
@@ -102,28 +114,45 @@ An ancient treehouse library built into a massive oak tree, spiral staircase of 
 Artisan sourdough bread fresh from the oven, steam rising, rustic wooden cutting board, scattered flour dust, warm morning light from a nearby window, shallow depth of field focusing on the crust texture, editorial food photography style, appetizing and inviting mood
 ```
 
-## Editing Prompts
+## Image-to-Image (I2I)
 
-For modifying existing images:
+GPT-Image excels at editing existing images with natural language instructions.
+
+### Editing Modes
+
+| Mode | Description | Example |
+|------|-------------|---------|
+| Add elements | Insert new objects/elements | "Add a small white butterfly landing on the flower" |
+| Remove elements | Clean removal with inpainting | "Remove the person in the background" |
+| Style transfer | Change artistic style | "Transform this into a watercolor painting" |
+| Modify attributes | Change colors, lighting, mood | "Make the lighting more dramatic with stronger shadows" |
+| Preserve + change | Edit while keeping specific elements | "Change the background to a beach sunset while keeping the person unchanged" |
+
+### I2I Best Practices
+- **Be specific about what to change**: "Change the wall color to navy blue" not "change the color"
+- **Be explicit about what to preserve**: "Keep the person, lighting, and composition unchanged"
+- **Use clear action verbs**: Add, remove, change, transform, enhance, replace
+- **Avoid vague instructions**: "Make it better" gives unpredictable results
+- **Layer edits**: Make one change at a time for precision
 
 ### Adding Elements
 ```
-Add a small white butterfly landing on the flower in the foreground
+Add a small white butterfly landing on the flower in the foreground, maintaining the same lighting and style
 ```
 
 ### Removing Elements
 ```
-Remove the person in the background while maintaining the natural scenery
+Remove the person in the background while maintaining the natural scenery and lighting continuity
 ```
 
 ### Style Changes
 ```
-Transform this photo into a watercolor painting style while preserving the composition
+Transform this photo into a watercolor painting style while preserving the composition and subject placement
 ```
 
 ### Refinements
 ```
-Enhance the lighting to be more dramatic with stronger shadows on the left side
+Enhance the lighting to be more dramatic with stronger shadows on the left side, keeping everything else unchanged
 ```
 
 ## Quality Enhancers
@@ -153,3 +182,11 @@ Add these for higher quality outputs:
 | Editing | Built-in | Limited |
 | Style control | Description-based | Parameter-based |
 | Speed | Very fast | Fast |
+
+## Higgsfield Notes
+
+| Setting | Recommendation |
+|---------|---------------|
+| Aspect Ratio | 1:1, 16:9, 9:16 |
+| Enhance | OFF |
+| Credits | ~1 per generation |

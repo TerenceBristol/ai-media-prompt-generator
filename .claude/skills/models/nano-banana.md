@@ -1,5 +1,17 @@
 # Nano Banana Pro Prompt Guide
 
+## Model Info
+| Field | Value |
+|-------|-------|
+| Name | Nano Banana Pro (Gemini 3 Pro Image) |
+| Maker | Google DeepMind |
+| Type | Image |
+| Modes | T2I, I2I |
+| Syntax | Natural creative director language |
+| Negative Prompts | No (use natural language descriptions) |
+| Higgsfield Available | Yes |
+| Approx. Cost | <1 credit per generation |
+
 ## Overview
 
 Nano Banana Pro is the community nickname for **Gemini 3 Pro Image**, Google DeepMind's state-of-the-art image generation model released November 2025. It features a "Thinking" process that reasons through prompts before generating.
@@ -128,6 +140,49 @@ After initial generation:
 - "Remove the person in the background"
 - "Make the text larger and bolder"
 
+## Image-to-Image (I2I)
+
+Nano Banana Pro's thinking process makes it excellent at understanding edit intent. Talk to it like briefing a human editor.
+
+### Reference Image Usage
+- Up to 14 reference images via few-shot design
+- Assign clear roles: "Image 1 is the subject, Image 2 is the style reference"
+- Use weight values to control influence of each reference
+
+### Conversational Editing
+The key differentiator — edit like a conversation:
+```
+That's great, but change the lighting to sunset and make the text neon blue.
+```
+
+### I2I Prompt Structure
+For structured edits, be specific:
+```
+Starting from the reference image: [describe what to change]. Keep [what to preserve]. Style direction: [style notes]. Technical: [camera/lighting adjustments].
+```
+
+### Edit Examples by Type
+
+**Lighting change:**
+```
+Change the lighting from flat daylight to dramatic golden hour with long shadows from the left. Keep the subject pose and composition.
+```
+
+**Style transfer:**
+```
+Reimagine this photo as a Studio Ghibli animation still. Maintain the composition and character poses but translate all elements into hand-painted anime style with soft watercolor backgrounds.
+```
+
+**Element addition:**
+```
+Add a vintage bicycle leaning against the fence on the right side. Match the existing warm afternoon lighting and slightly desaturated color palette.
+```
+
+**Background replacement:**
+```
+Replace the plain wall background with a cozy bookshop interior. Keep the person's pose, expression, and lighting direction unchanged. Add warm ambient light from reading lamps.
+```
+
 ## How to Access
 
 | Platform | How |
@@ -151,6 +206,14 @@ After initial generation:
 - Being too brief - detail helps
 - Ignoring the conversational edit capability
 - Not specifying lighting clearly
+
+## Higgsfield Notes
+
+| Setting | Recommendation |
+|---------|---------------|
+| Aspect Ratio | Any standard ratio, 4K supported |
+| Enhance | OFF |
+| Credits | <1 per generation |
 
 ## Known Limitations
 

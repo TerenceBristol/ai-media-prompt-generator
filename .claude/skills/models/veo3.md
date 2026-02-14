@@ -1,5 +1,17 @@
 # VEO3 Prompt Guide
 
+## Model Info
+| Field | Value |
+|-------|-------|
+| Name | VEO3 |
+| Maker | Google DeepMind |
+| Type | Video |
+| Modes | T2V, I2V |
+| Syntax | Natural language (slot-based) |
+| Negative Prompts | Yes (in-prompt + negative prompt field) |
+| Higgsfield Available | Yes |
+| Approx. Cost | ~8 credits per clip |
+
 ## Technical Specifications
 
 | Spec | Value |
@@ -120,6 +132,44 @@ A young woman in a red coat walks alone through a foggy forest at dawn, camera t
 Medium shot of a bearded chef in white uniform standing in a professional kitchen, warm overhead lighting, steam rising from pots behind him. Chef says: "The secret is patience." (no subtitles). Kitchen ambient sounds, sizzling pans. Static tripod shot, shallow DOF. No text overlay.
 ```
 
+## Image-to-Video (I2V)
+
+VEO3 can animate a reference image into a video clip.
+
+### How It Works
+- Provide a reference image as the first or last frame
+- The prompt describes what motion, camera movement, and audio to add
+- The image establishes subject appearance, setting, and color palette
+- Recommended: use 720p+ resolution source images for best quality
+
+### I2V Prompt Structure
+```
+[Reference image context]. [Describe the motion that occurs]. [Camera movement]. [Audio direction]. No subtitles, no text overlay.
+```
+
+### I2V Examples
+
+**Bringing a portrait to life:**
+```
+The woman in the portrait slowly turns her head to face the camera, a gentle smile forming. Soft breeze moves her hair. Camera holds static, medium close-up. Ambient: soft wind, distant birds. No subtitles, no text overlay.
+```
+
+**Animating a landscape:**
+```
+The mountain lake scene comes alive with gentle ripples on the water surface, clouds drifting slowly across the sky, and trees swaying in a light breeze. Slow dolly forward toward the lake. Ambient: water lapping, wind through pines. No subtitles, no text overlay.
+```
+
+**Product animation:**
+```
+The sneaker on the display rotates slowly on a turntable, studio lights catching different angles and textures. Camera orbits right, matching rotation. Clean studio ambient, subtle mechanical rotation sound. No subtitles, no text overlay.
+```
+
+### I2V Tips
+- Source image quality matters — 720p+ recommended
+- Don't contradict what's visible in the image
+- Focus prompt on MOTION and AUDIO, not re-describing the static elements
+- Camera movement works well — the model adds parallax and depth
+
 ## Advanced: JSON Prompting
 
 For maximum control, use structured JSON format:
@@ -148,3 +198,20 @@ For maximum control, use structured JSON format:
 - Don't forget "no subtitles" instruction
 - Don't use conflicting camera directions
 - Don't omit audio specifications (VEO3 generates audio by default)
+
+## Higgsfield Notes
+
+| Setting | Recommendation |
+|---------|---------------|
+| Aspect Ratio | 16:9 (default), 9:16 for vertical |
+| Duration | ~8 seconds typical |
+| Enhance | OFF |
+| Camera Presets | Match to prompt camera direction |
+| Credits | ~8 per clip |
+
+**Best camera presets for VEO3:**
+- Dialogue scenes: Static, Dolly In (subtle)
+- Atmospheric: Crane Up, Dolly Out
+- Product: Orbit, Lazy Susan
+- Documentary: Handheld, Pan Left/Right
+- Dramatic: Crash Zoom, Super Dolly In

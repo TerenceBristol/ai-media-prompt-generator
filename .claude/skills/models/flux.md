@@ -1,5 +1,17 @@
 # FLUX.2 Max Prompt Guide
 
+## Model Info
+| Field | Value |
+|-------|-------|
+| Name | Flux 2 Max |
+| Maker | Black Forest Labs |
+| Type | Image |
+| Modes | T2I, I2I |
+| Syntax | Natural language (word order matters) |
+| Negative Prompts | No (describe what you want, not what to avoid) |
+| Higgsfield Available | Yes |
+| Approx. Cost | ~1 credit per generation |
+
 ## Overview
 
 FLUX.2 Max is Black Forest Labs' top-tier image generation model (released November 2025), offering exceptional image quality, prompt understanding, and editing consistency. Designed for professional creative and marketing workflows.
@@ -122,6 +134,28 @@ Ancient library carved into a cliff face, warm candlelight glowing from arched w
 5. **Use native languages** - For culturally authentic results
 6. **Layer references clearly** - Assign roles when using multiple images
 
+## Image-to-Image (I2I)
+
+Flux supports reference images for style and subject guidance.
+
+### Reference Image Usage
+- Use 2-3 reference images maximum (more creates conflicting signals)
+- Assign clear roles to each reference: "Image 1 for style, Image 2 for subject"
+- Positive-only reframing — never use negative language even when describing changes
+
+### I2I Prompt Structure
+```
+Reference image style: [description of what to take from reference]. New scene: [describe the new image you want], maintaining [specific elements from reference]
+```
+
+### Example: Style Reference
+```
+Using the warm golden tones and soft focus of the reference image, create a portrait of a young man in a leather jacket, autumn park setting, fallen leaves, same dreamy color palette and lens flare quality
+```
+
+### Important: No Negatives in I2I
+Even in I2I mode, Flux does not support negative prompts. Instead of "remove the background", say "subject isolated on clean white studio backdrop."
+
 ## Common Mistakes to Avoid
 
 - Using negative prompts (--no, "without", "no")
@@ -135,3 +169,11 @@ Ancient library carved into a cliff face, warm candlelight glowing from arched w
 - Prompting Guide: https://bfl.mintlify.app/guides/prompting_guide_flux2
 - Discord: discord.gg/blackforestlabs (#prompting channel)
 - Model page: https://bfl.ai/models/flux-2
+
+## Higgsfield Notes
+
+| Setting | Recommendation |
+|---------|---------------|
+| Aspect Ratio | Any (multiples of 16) |
+| Enhance | OFF |
+| Credits | ~1 per generation |

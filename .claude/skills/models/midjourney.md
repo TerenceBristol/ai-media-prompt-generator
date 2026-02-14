@@ -1,5 +1,17 @@
 # Midjourney v7 Prompt Guide
 
+## Model Info
+| Field | Value |
+|-------|-------|
+| Name | Midjourney v7 |
+| Maker | Midjourney |
+| Type | Image |
+| Modes | T2I, I2I |
+| Syntax | Natural language + parameters |
+| Negative Prompts | Yes (--no) |
+| Higgsfield Available | Yes |
+| Approx. Cost | ~2 credits per generation |
+
 ## Syntax Format
 
 ```
@@ -91,6 +103,36 @@ Ancient library floating among clouds, endless bookshelves spiraling into infini
 Luxury perfume bottle on black marble surface, dramatic side lighting, water droplets and rose petals, high-end cosmetics photography, clean minimalist composition --ar 1:1 --s 100 --style raw --v 7
 ```
 
+## Image-to-Image (I2I)
+
+Midjourney v7 supports image references for style transfer, object reference, and character consistency.
+
+### Reference Parameters
+
+| Parameter | Description | Range |
+|-----------|-------------|-------|
+| `--oref [url]` | Object reference — match specific objects | N/A |
+| `--sref [url]` | Style reference — match visual style | N/A |
+| `--sw` | Style weight — how strongly to match style ref | 0-1000 (default: 100) |
+| `--iw` | Image weight — influence of reference vs text | 0-3 (default: 1) |
+| `--cref [url]` | Character reference — maintain character identity | N/A |
+
+### I2I Workflow
+1. Upload or provide URL to reference image
+2. Add the image URL at the start of your prompt
+3. Follow with descriptive text for modifications
+4. Use `--iw` to control how much the reference influences output
+
+### Example: Style Transfer
+```
+[image_url] A medieval castle on a cliff at sunset, maintaining the color palette and brushwork style of the reference --sref [style_url] --sw 200 --ar 16:9 --v 7
+```
+
+### Example: Character Consistency
+```
+[image_url] Same character now sitting in a cafe, warm afternoon light, reading a book --cref [char_url] --ar 3:2 --v 7
+```
+
 ## Common Mistakes to Avoid
 
 - Don't overload with conflicting style details
@@ -104,3 +146,11 @@ Common exclusions:
 ```
 --no text, watermark, signature, blurry, distorted, ugly, deformed hands
 ```
+
+## Higgsfield Notes
+
+| Setting | Recommendation |
+|---------|---------------|
+| Aspect Ratio | 16:9, 3:2, 1:1 most common |
+| Enhance | OFF |
+| Credits | ~2 per generation |
