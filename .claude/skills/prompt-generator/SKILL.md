@@ -257,6 +257,24 @@ If yes:
 [Lighting direction]
 ```
 
+### Step 10.5: Suggest SVG Animation (When Relevant)
+
+If the user's concept would work well as an SVG animation (geometric shapes, motion graphics, animated text, icons, loading animations, data visualizations), suggest:
+
+> "This concept could also work as an **SVG animation** — a vector-based animation you can export as video for editing. Want to try `/svg-animator`?"
+
+Trigger conditions:
+- Concept is primarily geometric, typographic, or icon-based
+- User mentions "animation" in a non-AI-video context
+- Concept involves data visualization or infographics
+- User wants a simple motion graphic rather than photorealistic video
+
+Do NOT suggest SVG animation for:
+- Photorealistic content
+- Live-action style video
+- Complex character animation
+- Scenarios clearly requiring AI video models
+
 ## Reference Image Handling (I2I / I2V)
 
 When the user provides a reference image:

@@ -102,6 +102,35 @@ Reusable style presets in `.claude/skills/styles/`:
 
 Users can create custom styles that are saved to this directory.
 
+## SVG Animator
+
+Generate, animate, and export SVG animations via the `/svg-animator` skill.
+
+### Modes
+| Mode | Description |
+|------|------------|
+| Create | Generate a static SVG from text description |
+| Animate | Add animation to an existing SVG file |
+| Create + Animate | Full pipeline — generate then animate |
+| Export | Convert animated SVG to video/GIF |
+
+### Output
+- SVG files saved to `output/svg-animations/`
+- Export formats: MP4, GIF, WebM (transparent), ProRes MOV (transparent)
+- Export script: `output/svg-animations/export.js`
+
+### Motion Primitives
+Composable building blocks in `.claude/skills/svg-animator/primitives/`:
+fade, slide, scale, rotate, path-motion, morph, text, color, draw, stagger
+
+### Reusable Templates
+Saved animations in `.claude/skills/svg-animator/templates/`
+
+### Animation Techniques
+- **SMIL**: `<animate>`, `<animateTransform>` — self-contained in SVG, default choice
+- **CSS**: `@keyframes` in `<style>` — for complex easing, text effects
+- Auto-selected based on animation needs
+
 ## Adding New Models
 
 1. **Use the model-researcher skill**: `/model-researcher [model name]`
