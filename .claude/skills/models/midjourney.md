@@ -9,7 +9,7 @@
 | Modes | T2I, I2I |
 | Syntax | Natural language + parameters |
 | Negative Prompts | Yes (--no) |
-| Higgsfield Available | Yes |
+| Higgsfield Available | No |
 | Approx. Cost | ~2 credits per generation |
 
 ## Syntax Format
@@ -149,8 +149,4 @@ Common exclusions:
 
 ## Higgsfield Notes
 
-| Setting | Recommendation |
-|---------|---------------|
-| Aspect Ratio | 16:9, 3:2, 1:1 most common |
-| Enhance | OFF |
-| Credits | ~2 per generation |
+**Midjourney v7 is NOT available on Higgsfield.** This model guide is provided for non-Higgsfield usage (e.g., via Discord or the Midjourney web app). If you are working within the Higgsfield platform, choose a different image model such as Flux 2 Max, GPT-Image 1.5, Seedream 4.5, or Higgsfield Soul.

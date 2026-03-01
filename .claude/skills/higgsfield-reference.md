@@ -135,7 +135,6 @@
 
 | Model | Type | Approx. Cost per Generation |
 |-------|------|----------------------------|
-| Midjourney v7 | Image | ~2 credits |
 | Flux 2 Max | Image | ~1 credit |
 | GPT-Image 1.5 | Image | ~1 credit |
 | Seedream 4.5 | Image | ~1 credit |

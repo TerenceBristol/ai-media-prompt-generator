@@ -268,12 +268,12 @@ Two best friends at a house party, early 2000s aesthetic, matching low-rise jean
 - **Cinema Studio 2.0** — Use Soul frames as starting points for cinematic video generation
 
 **Comparison with other Higgsfield image models:**
-| Factor | Higgsfield Soul | Midjourney v7 | Flux 2 Max | GPT-Image 1.5 |
-|--------|----------------|---------------|------------|----------------|
-| Realism | Ultra-realistic, smartphone-authentic | Artistic-realistic, stylized | Photo-realistic, versatile | Balanced, good all-rounder |
-| Fashion/Editorial | Exceptional (core strength) | Very good | Good | Good |
-| Preset System | 50+ curated aesthetics | None (prompt-driven) | None | None |
-| Prompt Complexity | Low (preset-assisted) | Medium (parameters) | Low | Low |
-| Text Rendering | Weak (garbled signage) | Good (improved in v7) | Moderate | Good |
-| Best For | Fashion, UGC, lifestyle, editorial | Art, fantasy, versatile | General photo, creative | Editing, versatile |
-| Credits | ~1 | ~2 | ~1 | ~1 |
+| Factor | Higgsfield Soul | Flux 2 Max | GPT-Image 1.5 |
+|--------|----------------|------------|----------------|
+| Realism | Ultra-realistic, smartphone-authentic | Photo-realistic, versatile | Balanced, good all-rounder |
+| Fashion/Editorial | Exceptional (core strength) | Good | Good |
+| Preset System | 50+ curated aesthetics | None | None |
+| Prompt Complexity | Low (preset-assisted) | Low | Low |
+| Text Rendering | Weak (garbled signage) | Moderate | Good |
+| Best For | Fashion, UGC, lifestyle, editorial | General photo, creative | Editing, versatile |
+| Credits | ~1 | ~1 | ~1 |

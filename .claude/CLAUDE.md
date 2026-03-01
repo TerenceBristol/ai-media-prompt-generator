@@ -7,12 +7,13 @@ Generate high-quality, model-specific prompts for AI image and video generation 
 
 | Model | Type | Modes | Approx. Credits | Status |
 |-------|------|-------|-----------------|--------|
-| Midjourney v7 | Image | T2I, I2I | ~2 | Active |
+| Midjourney v7 | Image | T2I, I2I | ~2 | Active (not on Higgsfield) |
 | Flux 2 Max | Image | T2I, I2I | ~1 | Active |
 | Flux Kontext | Image | T2I, I2I | ~1.5 | Active |
 | GPT-Image 1.5 | Image | T2I, I2I | ~1 | Active |
 | Seedream 4.5 | Image | T2I, I2I | ~1 | Active |
 | Nano Banana Pro | Image | T2I, I2I | <1 | Active |
+| Nano Banana 2 | Image | T2I, I2I | ~2 | Active |
 | Reve Image 1.0 | Image | T2I, I2I | ~1 | Active |
 | Z-Image | Image | T2I, I2I | <1 | Active |
 | Higgsfield Soul | Image | T2I, I2I | ~1 | Active |
@@ -38,8 +39,8 @@ Generate high-quality, model-specific prompts for AI image and video generation 
 
 | Mode | Compatible Models |
 |------|-------------------|
-| T2I | Midjourney v7, Flux 2 Max, Flux Kontext, GPT-Image 1.5, Seedream 4.5, Nano Banana Pro, Reve Image 1.0, Z-Image, Higgsfield Soul |
-| I2I | GPT-Image 1.5, Seedream 4.5, Flux 2 Max, Flux Kontext, Nano Banana Pro, Midjourney v7, Reve Image 1.0, Z-Image, Higgsfield Soul |
+| T2I | Flux 2 Max, Flux Kontext, GPT-Image 1.5, Seedream 4.5, Nano Banana Pro, Nano Banana 2, Reve Image 1.0, Z-Image, Higgsfield Soul |
+| I2I | GPT-Image 1.5, Seedream 4.5, Flux 2 Max, Flux Kontext, Nano Banana Pro, Nano Banana 2, Reve Image 1.0, Z-Image, Higgsfield Soul |
 | T2V | Veo 3.1, WAN 2.6, Kling 3.0, Kling O1, Seedance 2.0, Sora 2, MiniMax Hailuo |
 | I2V | Veo 3.1, WAN 2.6, Kling 3.0, Kling O1, Seedance 2.0, Sora 2, MiniMax Hailuo |
 | Storyboard | Kling 3.0, Seedance 2.0 |
@@ -153,6 +154,7 @@ Model-specific syntax, parameters, and examples:
 - `.claude/skills/models/gpt-image.md`
 - `.claude/skills/models/seedream.md`
 - `.claude/skills/models/nano-banana.md`
+- `.claude/skills/models/nano-banana-2.md` (Nano Banana 2)
 - `.claude/skills/models/reve.md`
 - `.claude/skills/models/z-image.md`
 - `.claude/skills/models/higgsfield-soul.md`
